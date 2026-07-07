@@ -1,0 +1,120 @@
+/* Pantalla completa de registro centrada vertical y horizontalmente. */
+.registerPage {
+    min-height: calc(100vh - 80px);
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+/* Tarjeta del formulario de registro. */
+.registerCard {
+    width: min(420px, 100%);
+    background: linear-gradient(135deg, rgba(20, 12, 14, 0.98) 0%, rgba(10, 8, 10, 0.98) 100%);
+    padding: 30px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 40, 79, 0.24);
+}
+
+/* Encabezado del formulario con título y texto explicativo. */
+.registerHeader {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.registerHeader h1 {
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+}
+
+.registerHeader p {
+    margin: 0;
+    color: #f2d9e0;
+    font-size: 0.95rem;
+}
+
+/* Estilo del fieldset y etiquetas del formulario. */
+.registerForm fieldset {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+.registerForm legend {
+    font-size: 1rem;
+    margin-bottom: 18px;
+    color: #d8d8d8;
+}
+
+.registerForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Campos de entrada del formulario. */
+.inputField {
+    width: 100%;
+    background: #121212;
+    border: 1px solid rgba(255, 40, 79, 0.24);
+    border-radius: 14px;
+    color: #f2f2f2;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    font-size: 0.98rem;
+    box-sizing: border-box;
+}
+
+.inputField:focus {
+    outline: 2px solid #8b0f1f;
+    outline-offset: 2px;
+}
+
+/* Mensajes de error mostrados por el backend. */
+.errorMessage {
+    color: #ff6d85;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Botón principal para enviar el formulario. */
+.submitButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 16px;
+    background: linear-gradient(135deg, #8b0f1f 0%, #4f0811 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.submitButton:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+/* Texto secundario con enlace de navegación. */
+.minorText {
+    margin-top: 20px;
+    color: #d1d1d1;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.minorText a {
+    color: #ffb1c0;
+    text-decoration: none;
+}
+
+.minorText a:hover {
+    text-decoration: underline;
+}

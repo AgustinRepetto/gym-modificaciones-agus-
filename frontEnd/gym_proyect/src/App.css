@@ -1,0 +1,118 @@
+/*ESTILADOR GLOBAL*/
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+/* Variables globales de diseño y tipografía. */
+:root {
+    color-scheme: dark;
+    font-family: 'Figtree', Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --title-font: 'Space Grotesk', 'Figtree', sans-serif;
+    background-color: #101010;
+    color: #f8f8f8;
+}
+
+/* Ajusta el modelo de caja para que todos los elementos se comporten de forma consistente. */
+* {
+    box-sizing: border-box;
+}
+
+/* Establece la base del documento para que ocupe toda la pantalla. */
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+}
+
+/* Fondo y margen base del cuerpo de la aplicación. */
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #060606;
+}
+
+/* Contenedor general de la aplicación para organizar el layout. */
+.app-shell {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 0 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Área donde se renderiza el contenido de cada página. */
+.page-content {
+    flex: 1;
+    width: 100%;
+}
+
+/* Cabecera superior con marca y navegación. */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 0;
+    gap: 16px;
+}
+
+/* Marca o nombre del gimnasio en la cabecera. */
+.brand {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Grupo de enlaces de navegación. */
+.nav-links {
+    display: flex;
+    gap: 16px;
+}
+
+/* Estilo base de cada enlace de navegación. */
+.nav-links a {
+    color: #d8c8cf;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Estado hover de los enlaces de navegación. */
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+
+/* Bloque de contenido destacado con texto y lista. */
+.feature-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.feature-item h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.feature-item p,
+.feature-item ul {
+    margin: 12px 0 0;
+    color: #d1d5db;
+    line-height: 1.75;
+}
+
+.feature-item ul {
+    padding-left: 20px;
+}
+
+.feature-item li {
+    margin-bottom: 10px;
+}
+
+
+
+

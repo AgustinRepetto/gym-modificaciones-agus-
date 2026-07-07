@@ -1,0 +1,272 @@
+/* Pantalla principal de login. */
+
+/* Tarjeta que envuelve el formulario de acceso. */
+.loginCard {
+    width: min(420px, 100%);
+    background: linear-gradient(135deg, rgba(20, 12, 14, 0.98) 0%, rgba(10, 8, 10, 0.98) 100%);
+    padding: 30px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 40, 79, 0.24);
+}
+
+/* Encabezado del formulario de acceso. */
+.loginHeader {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.loginHeader h1 {
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+}
+
+.loginHeader p {
+    margin: 0;
+    color: #f2d9e0;
+}
+
+/* Elimina el borde del fieldset del formulario. */
+.loginForm fieldset {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+.loginForm legend {
+    font-size: 1rem;
+    margin-bottom: 18px;
+    color: #d8d8d8;
+}
+
+.loginForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Pantalla de login centrada con el mismo espaciado que las páginas públicas. */
+.loginPage {
+    min-height: calc(100vh - 80px);
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+/* Campos del formulario de acceso. */
+.inputField {
+    width: 100%;
+    background: #121212;
+    border: 1px solid rgba(255, 40, 79, 0.24);
+    border-radius: 14px;
+    color: #f2f2f2;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    font-size: 0.98rem;
+}
+
+/* Marca visualmente el campo activo. */
+.inputField:focus {
+    outline: 2px solid #ff284f;
+    outline-offset: 2px;
+}
+
+/* Fila con el botón para mostrar u ocultar la contraseña. */
+.passwordRow {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 18px;
+}
+
+/* Botón para alternar la visibilidad de la contraseña. */
+.togglePassword {
+    background: transparent;
+    color: #e9c4d5;
+    border: none;
+    cursor: pointer;
+    font-size: 0.92rem;
+    padding: 6px 10px;
+}
+
+/* Texto secundario con enlaces de ayuda. */
+.minorText {
+    margin-top: 20px;
+    color: #d1d1d1;
+    font-size: 0.95rem;
+}
+
+.minorText a {
+    color: #e9c4d5;
+    text-decoration: none;
+}
+
+.minorText a:hover {
+    text-decoration: underline;
+}
+
+/* Separador visual para opciones de inicio de sesión externo. */
+.oauthSeparator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+.oauthSeparator::before,
+.oauthSeparator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.oauthSeparator span {
+    padding: 0 10px;
+}
+
+/* Botón principal para iniciar sesión. */
+.submitButton {
+    display: inline-flex;     
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 16px;
+    background: linear-gradient(135deg, #8b0f1f 0%, #4f0811 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;      
+    white-space: nowrap;       
+    box-sizing: border-box;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.submitButton:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+/* Contenedor del estado de carga. */
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Spinner de carga para indicar espera. */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-left-color: #8b0f1f; 
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+/* Animación del spinner. */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+  /* Contenedor del botón de Google. */
+.googleBtnContainer{ 
+      margin-top: 15px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    
+    /* Botón visual de Google con efecto hover. */
+.googleImageLink{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 188px;
+      height: 47px;
+      padding: 2.5px;
+      border-radius: 7px;
+      overflow: hidden;
+      text-decoration: none;
+      z-index: 0;
+      background: rgba(255, 255, 255, 0.05);
+      transition: 1s ease;
+  }
+
+  /* Efecto de brillo detrás del botón de Google. */
+.googleImageLink::before{
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        75px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+        rgba(66, 133, 244, 0.8),
+        rgba(155, 81, 224, 0.8),
+        rgba(233, 66, 53, 0.6),
+          transparent 60%
+      );
+      opacity: 0;
+      transition: opacity 1.1s ease;
+      z-index: -2;
+  }
+
+  .googleImageLink:hover::before{
+    opacity: 1;
+  }
+
+
+  .googleImageLink:hover{
+      filter: brightness(1.15);
+  }
+  
+  .googleImageLink:focus,
+  .googleImageLink:focus-visible {
+      outline: none;
+  }
+
+  /* Capa interna del botón de Google. */
+.googleImageLink::after{
+      content: '';
+      position: absolute;
+      inset: 2.5px;
+      background: rgb(21, 22, 24);
+      border-radius: 7px;
+      z-index: -1;
+  }
+
+  /* Imagen completa del botón de Google. */
+.googleFullImage{
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 90%;
+    object-fit: contain;
+    border-radius: 7px;
+  }
+  
+  @keyframes rotateAiBorder{
+      from {transform: rotate(0deg);}
+      to { transform: rotate(360deg);}
+  }
+  
+  .googleFullImage:hover{
+      filter: brightness(1.15);
+      transition: 0.5s;
+  }
+  
+  
+  .googleImageLink:focus-visible {
+      filter: brightness(1.2);
+      /* box-shadow: 0 0 0 2px #5a90ff; */
+      /* border-radius: 4px; */
+  }
+  
+

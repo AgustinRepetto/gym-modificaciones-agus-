@@ -1,0 +1,265 @@
+.section{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    width: 100%;
+}
+
+.sectionHeader{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}
+
+.sectionEye{
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #4285f4;
+    margin-bottom: 0.5rem;
+}
+
+.sectionTitle{
+    font-size: 2.25rem;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    line-height: 1;
+    margin: 0;
+}
+
+.tabButtons{
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 1rem;
+}
+
+.tabBtn{
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tabBtn:hover{
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.activeBtn{
+    background: rgba(66, 133, 244, 0.15);
+    border: 1px solid #4285f4;
+    color: #4285f4;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.newsGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.newsDate{
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.newsTitle{
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.newsText{
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.5;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.actions{
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.actions button{
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.actions button:hover{
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.editBtn:hover{
+    background: rgba(251, 188, 5, 0.15) !important;
+    border-color: #fbbc05 !important;
+    color: #fbbc05;
+}
+
+.resubmitBtn:hover{
+    background: rgba(52, 168, 83, 0.15) !important;
+    border-color: #34a853 !important;
+    color: #34a853;
+}
+
+.createMainBtn{
+    background: #34a853 !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.6rem 1.5rem !important;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.createForm{
+    background: #1c1d21;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.createForm h3{
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.formGroup label{
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.createForm textarea,
+.createForm input,
+.createForm select{
+    background: #111214;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+.createForm textarea{
+    min-height: 80px;
+    resize: vertical;
+}
+
+.formGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.submitBtn{
+    background: #4285f4 !important;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.skeletons{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.skeleton{
+    background: linear-gradient(90deg, #1d1e22 25%, #26282e 50%, #1d1e22 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+.skeletonTall{
+    height: 220px;
+}
+
+@keyframes shimmer {
+    0% {background-position: 200% 0;}
+    100% {background-position: -200% 0;}
+}
+
+.empty{
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 4rem;
+    font-size: 0.9rem;
+    border: 1px dashed rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+}
+
+.newsMeta{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.newsDateExp{
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #fbbc05;
+    font-weight: 500;
+}
+
+.newsDatePub{
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #4285f4;
+    font-weight: 500;
+}
+
+
+.deleteBtn:hover{
+    background: rgba(219, 68, 85, 0.15) !important;
+    border-color: #db4437 !important;
+    color: #db4437;
+}

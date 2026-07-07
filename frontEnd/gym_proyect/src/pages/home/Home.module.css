@@ -1,0 +1,772 @@
+/* Contenedor principal de la página. */
+.homePage {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    padding: 20px clamp(12px, 2vw, 28px);
+}
+
+/* Tarjeta principal que contiene todo el contenido del home. */
+.homeCard {
+    width: min(1200px, 100%);
+    background: #111111;
+    border: 1px solid #2a0f15;
+    padding: 32px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.04);
+    border-radius: 0;
+    animation: slideInCard 0.6s ease-out;
+}
+
+/* Animación de entrada para la tarjeta principal. */
+@keyframes slideInCard {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Encabezado visual del inicio con título y texto introductorio. */
+.homeHeader {
+    font-weight: 700;
+    font-size: 1.8rem;
+    font-family: var(--title-font);
+    line-height: 1.2;
+    max-width: 860px;
+    margin: 0 auto 24px;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+/* Etiqueta destacada del encabezado. */
+.homeBadge {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 14px;
+    border-radius: 0;
+    background: #7f0d18;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(196, 58, 92, 0.18);
+    animation: fadeInDown 0.8s ease-out;
+    transition: all 0.3s ease;
+}
+
+.homeBadge:hover {
+    background: rgba(163, 60, 92, 0.22);
+    transform: scale(1.05);
+}
+
+/* Animación de entrada hacia arriba para la etiqueta. */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título principal del home. */
+.homeHeader h1 {
+    margin: 0 0 14px;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-family: var(--title-font);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+/* Animación de entrada suave para textos y bloques. */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Descripción breve debajo del título. */
+.homeDescription {
+    margin: 0;
+    color: #c9c9c9;
+    line-height: 1.75;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Contenedor general de contenido del home. */
+.homeContent {
+    display: grid;
+    gap: 18px;
+    margin-top: 24px;
+}
+
+/* Pie de la sección principal con llamada a la acción. */
+.homeFooter {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    color: #9ca3af;
+}
+
+.homeFooter p {
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+/* Botón principal de acción del home. */
+.ctaButton {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 0;
+    padding: 14px 28px;
+    background: #8b0f1f;
+    color: white;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:
+        0 6px 0 #4c0710,
+        0 10px 24px rgba(139, 15, 31, 0.35),
+        inset 0 1px 0 rgba(255,255,255,0.22);
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.16);
+}
+
+/* Efecto visual de brillo al pasar el mouse sobre el botón. */
+.ctaButton::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.ctaButton:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 6px 0 #4c0710,
+        0 14px 32px rgba(139, 15, 31, 0.42),
+        inset 0 1px 0 rgba(255,255,255,0.24);
+}
+
+.ctaButton:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.ctaButton:active {
+    transform: translateY(-2px);
+}
+
+/* Bloque de presentación del gimnasio. */
+.gymDescription {
+    margin: 32px 0;
+    padding: clamp(16px, 4vw, 24px);
+    background: #161616;
+    border-radius: 0;
+    border: 1px solid #2d1218;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.gymDescription:hover {
+    border-color: rgba(139, 15, 31, 0.4);
+    background: rgba(139, 15, 31, 0.14);
+    box-shadow: 0 8px 24px rgba(139, 15, 31, 0.18);
+}
+
+/* Título de la sección de descripción. */
+.gymDescription h2 {
+    margin: 0 0 16px;
+    font-size: clamp(1.3rem, 4vw, 1.6rem);
+    font-family: var(--title-font);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #f2d9e0;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.25s both;
+}
+
+/* Encabezado de la descripción con texto introductorio. */
+.descriptionHeader {
+    margin-bottom: 24px;
+}
+
+.descriptionHeader p {
+    color: #c9c9c9;
+    line-height: 1.7;
+    margin: 0 auto 24px;
+    text-align: center;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    max-width: 760px;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: clamp(16px, 3vw, 20px);
+    margin-top: 20px;
+}
+
+/* Cada tarjeta de característica. */
+.feature {
+    background: #151515;
+    padding: clamp(16px, 3vw, 20px);
+    border-radius: 0;
+    border: 1px solid #2b1117;
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: both;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.feature:nth-child(1) { animation-delay: 0.35s; }
+.feature:nth-child(2) { animation-delay: 0.4s; }
+.feature:nth-child(3) { animation-delay: 0.45s; }
+
+.feature:hover {
+    border-color: rgba(168, 61, 93, 0.45);
+    background: rgba(168, 61, 93, 0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(168, 61, 93, 0.18);
+}
+
+.feature h3 {
+    margin: 0 0 10px;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    color: #e8d2db;
+    transition: all 0.3s ease;
+}
+
+.feature:hover h3 {
+    transform: scale(1.1);
+}
+
+.feature p {
+    margin: 0;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    color: #9ca3af;
+    transition: color 0.3s ease;
+}
+
+.feature:hover p {
+    color: #c9c9c9;
+}
+
+.locationSection {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 18px;
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.locationInfo h3 {
+    margin: 0 0 10px;
+    color: #f2d9e0;
+    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+}
+
+.locationInfo p {
+    margin: 0 0 10px;
+    text-align: left;
+}
+
+.locationInfo ul {
+    padding-left: 18px;
+    margin: 0;
+    color: #c9c9c9;
+    line-height: 1.8;
+}
+
+/* Contenedor del mapa integrado. */
+.mapWrapper {
+    overflow: hidden;
+    border-radius: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    min-height: 260px;
+}
+
+.mapWrapper iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    border: 0;
+}
+
+/* Bloque de productos destacados. */
+.topProductsCarousel {
+    margin: 0 0 24px;
+    padding: 18px;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(138, 22, 60, 0.35);
+}
+
+/* Encabezado de la sección de productos. */
+.topProductsHeader {
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.topProductsHeader h2 {
+    margin: 0;
+    font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+    color: #f2d9e0;
+}
+
+/* Texto secundario de la sección de productos. */
+.topProductsSubtitle {
+    margin: 8px auto 0;
+    color: #c9c9c9;
+    line-height: 1.6;
+    max-width: 700px;
+    font-size: 0.95rem;
+}
+
+.topProductsTrack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+}
+
+/* Cada tarjeta individual de producto. */
+.topProductCard {
+    border-radius: 0;
+    color: white;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    animation: floatCard 5.2s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+}
+
+.topProductCard:nth-child(2) { animation-delay: 0.8s; }
+.topProductCard:nth-child(3) { animation-delay: 1.6s; }
+.topProductCard:nth-child(4) { animation-delay: 2.4s; }
+
+/* Animación flotante para las tarjetas de producto. */
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-7px) scale(1.01); }
+}
+
+/* Imagen superior de cada producto. */
+.topProductImage {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenido textual dentro de la tarjeta del producto. */
+.topProductContent {
+    padding: 14px 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.topProductContent span {
+    display: inline-block;
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.18);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.topProductContent h3 {
+    margin: 0;
+    font-size: 1.02rem;
+}
+
+.topProductContent p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+/* Sección de estadísticas del gimnasio. */
+.statsSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin: 28px 0 8px;
+}
+
+/* Cada tarjeta de estadística. */
+.statCard {
+    background: linear-gradient(135deg, rgba(168, 61, 93, 0.16), rgba(255, 255, 255, 0.04));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+    padding: 18px 16px;
+    text-align: center;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
+.statCard span {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #86767b;
+    margin-bottom: 6px;
+}
+
+.statCard p {
+    margin: 0;
+    color: #c8c8c8;
+    font-size: 0.92rem;
+}
+
+/* Bloque destacado con información extra. */
+.highlightSection {
+    margin: 24px 0 20px;
+}
+
+.highlightPanel {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+    padding: clamp(18px, 3vw, 28px);
+}
+
+/* Título del texto destacado. */
+.highlightText h2 {
+    margin: 0 0 10px;
+    font-size: clamp(1.2rem, 2.8vw, 1.5rem);
+    color: #f1d7e1;
+}
+
+/* Texto introductorio de la sección destacada. */
+.highlightText p {
+    margin: 0 0 14px;
+    color: #c9c9c9;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.highlightText ul,
+.highlightCard ul {
+    padding-left: 18px;
+    margin: 0;
+    color: #c9c9c9;
+    line-height: 1.8;
+}
+
+/* Tarjeta lateral con información adicional y horarios. */
+.highlightCard {
+    background: linear-gradient(140deg, rgba(163, 60, 92, 0.22), rgba(12, 12, 14, 0.95));
+    border-radius: 14px;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.highlightCard h3 {
+    margin: 0 0 12px;
+    color: #f8dee6;
+}
+
+/* Grupo de etiquetas pequeñas en la tarjeta destacada. */
+.pillGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.pillGroup span {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.1);
+    color: #f3dbe3;
+    font-size: 0.8rem;
+}
+
+/* Sección general de productos o servicios del home. */
+.productsSection {
+    margin: 24px 0 18px;
+}
+
+/* Encabezado de la sección de productos. */
+.sectionHeading {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/* Etiqueta pequeña superior del título de la sección. */
+.sectionEyebrow {
+    display: inline-block;
+    margin: 0 0 8px;
+    padding: 5px 12px;
+    border-radius: 0;
+    background: rgba(163, 60, 92, 0.16);
+    color: #f1d7e1;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Título principal de cada sección. */
+.sectionHeading h2 {
+    margin: 0;
+    font-size: clamp(1.2rem, 2.8vw, 1.5rem);
+    font-family: var(--title-font);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #f1d7e1;
+}
+
+/* Texto de apoyo debajo de un título de sección. */
+.sectionText {
+    margin: 8px auto 0;
+    color: #c9c9c9;
+    line-height: 1.6;
+    max-width: 720px;
+    font-size: 0.95rem;
+}
+
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+/* Cada tarjeta de producto o servicio. */
+.productCard {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(138, 22, 60, 0.35);
+    border-radius: 0;
+    padding: 18px;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.productCard:hover {
+    transform: translateY(-6px);
+    border-color: rgba(138, 22, 60, 0.65);
+    background: rgba(138, 22, 60, 0.12);
+}
+
+/* Icono visual de la tarjeta de producto. */
+.productIcon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.productCard h3 {
+    margin: 0 0 8px;
+    color: #f2d9e0;
+    font-size: 1rem;
+}
+
+.productCard p {
+    margin: 0 0 10px;
+    color: #c9c9c9;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.productCard span {
+    display: inline-block;
+    color: #ffcfdf;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Footer de la página */
+/* Footer general de la página. */
+.pageFooter {
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 32px;
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.footerContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: clamp(24px, 5vw, 30px);
+    margin-bottom: 24px;
+}
+
+/* Cada bloque del footer. */
+.footerSection {
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.footerSection:nth-child(1) { animation-delay: 0.55s; }
+.footerSection:nth-child(2) { animation-delay: 0.6s; }
+.footerSection:nth-child(3) { animation-delay: 0.65s; }
+
+/* Título de cada bloque del footer. */
+.footerSection h4 {
+    margin: 0 0 12px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: #e8d2db;
+    transition: all 0.3s ease;
+}
+
+.footerSection:hover h4 {
+    color: #f0d5de;
+    transform: scale(1.05);
+}
+
+/* Texto de apoyo dentro de cada bloque del footer. */
+.footerSection p {
+    margin: 8px 0;
+    color: #9ca3af;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    transition: color 0.3s ease;
+}
+
+.footerSection:hover p {
+    color: #c9c9c9;
+}
+
+/* Lista de enlaces del footer. */
+.footerSection ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footerSection ul li {
+    margin: 8px 0;
+}
+
+.footerSection ul li a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    position: relative;
+}
+
+.footerSection ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #7f0d18;
+    transition: width 0.3s ease;
+}
+
+.footerSection ul li a:hover {
+    color: #f0d5de;
+}
+
+.footerSection ul li a:hover::after {
+    width: 100%;
+}
+
+/* Línea final del footer con información secundaria. */
+.footerBottom {
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #6b7280;
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+    animation: fadeInUp 0.8s ease-out 0.7s both;
+}
+
+/* Ajustes especiales para pantallas pequeñas. */
+@media (max-width: 768px) {
+    .homePage {
+        padding: 16px;
+    }
+
+    .homeCard {
+        padding: 24px 16px;
+        width: 100%;
+    }
+
+    .homeHeader {
+        margin: 0 auto 20px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .highlightPanel {
+        grid-template-columns: 1fr;
+    }
+
+    .topProductsTrack {
+        grid-template-columns: 1fr;
+    }
+
+    .locationSection {
+        grid-template-columns: 1fr;
+    }
+
+    .productsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .footerContent {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+/* Ajustes especiales para pantallas grandes. */
+@media (min-width: 1200px) {
+    .homeCard {
+        width: min(1280px, 100%);
+        padding: 48px;
+    }
+
+    .features {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .productsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footerContent {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

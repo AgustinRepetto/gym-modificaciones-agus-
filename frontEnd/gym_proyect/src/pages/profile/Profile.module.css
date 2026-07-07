@@ -1,0 +1,538 @@
+/* Layout de los campos del formulario de perfil. */
+.fieldset {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+}
+
+/* Formulario de edición del perfil. */
+.form {
+    padding: 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Etiquetas y campos del formulario. */
+.form label {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: 14px;
+  color: #dfe6ff;
+  width: 100%;
+}
+
+/* Inputs del formulario de perfil. */
+.form input {
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #f8fafc;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.form input:focus {
+    outline: none;
+    border-color: rgba(191, 75, 111, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Imagen de perfil mostrada en la vista. */
+.imgProfile{
+    border: 3px solid gray;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+/* Botones de acción del formulario. */
+.formActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.form h2,
+.formActions{
+  grid-column: span 2;
+  justify-self: start;
+}
+
+/* Botones de editar o eliminar cuenta. */
+.btnEditProfile,
+.deleteAccountButton {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    margin-top: 8px;
+}
+
+.deleteAccountButton {
+    background-color: #7f0d18;
+}
+
+/* Botón para guardar los cambios del perfil. */
+.btnSaveProfile{
+  background: linear-gradient(135deg, #a83d5d 0%, #6a1f33 100%);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Botón para cancelar la edición. */
+.btnCancelEdit{
+  background-color: #5e4650;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Banner de advertencia para acciones importantes. */
+.warningBanner {
+  background-color: #fff3cd;
+  border-left: 5px solid #ffc107;
+  color: #856404;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+/* Convierte el botón del texto en un link estilizado */
+/* Enlace estilizado usado como botón textual. */
+.linkButton {
+  background: none;
+  border: none;
+  color: #f2d9e0;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Botón de la X para cerrar el banner */
+/* Botón para cerrar el banner de advertencia. */
+.closeBannerBtn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #856404;
+  position: absolute;
+  right: 15px;
+  top: 12px;
+}
+
+/* El contenedor del formulario flotante de contraseña*/
+/* Modal flotante para cambiar la contraseña. */
+.passwordModalOverlay {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Acciones del modal de contraseña. */
+.modalActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Botón de cancelar dentro del modal. */
+.btnCancel {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Contenido principal del perfil con fondo decorativo. */
+.mainContent {
+  padding: 28px 24px 40px;
+  max-width: 1180px;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px);
+  background: radial-gradient(circle at top left, rgba(163, 60, 92, 0.12), transparent 28%),
+              radial-gradient(circle at bottom right, rgba(191, 75, 111, 0.12), transparent 32%);
+}
+
+/* Contenedor general del perfil. */
+.profileContainer {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Disposición vertical de las secciones del perfil. */
+.profileWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.profileGrid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 1.5fr 1fr;
+}
+
+/* Tarjetas de datos del usuario y pagos. */
+.profileCard,
+.paymentCard {
+  background: rgba(18, 18, 18, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 32px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.22);
+}
+
+/* Encabezado de las tarjetas de perfil y pagos. */
+.profileHeader,
+.paymentCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+/* Etiqueta pequeña sobre el título del perfil. */
+.profileLabel {
+  margin: 0 0 6px;
+  color: #d9c0d0;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+}
+
+/* Títulos de las secciones de perfil y pagos. */
+.profileCard h1,
+.paymentCard h2 {
+  margin: 0;
+  font-size: 2.1rem;
+  line-height: 1.05;
+  color: #f8fafc;
+}
+
+/* Texto descriptivo de la tarjeta de perfil. */
+.profileSubtitle {
+  margin-top: 10px;
+  max-width: 520px;
+  color: #c1cbd8;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* Bloque con la foto y acciones de avatar. */
+.avatarBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Contenedor de la imagen de perfil. */
+.avatarWrapper {
+  width: 140px;
+  height: 140px;
+  border-radius: 0;
+  overflow: hidden;
+  border: 2px solid #2d3748;
+  background: linear-gradient(135deg, rgba(63, 166, 255, 0.18), rgba(236, 72, 153, 0.12));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgProfile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Botón para subir o cambiar foto. */
+.uploadPhotoButton {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(163, 60, 92, 0.95);
+  color: #fff;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.uploadPhotoButton:hover {
+  transform: translateY(-1px);
+}
+
+/* Oculta el input real de archivo. */
+.fileInputHidden {
+  display: none;
+}
+
+/* Botones de acción reutilizables. */
+.btnPrimary,
+.btnSecondary,
+.btnDanger {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+}
+
+/* Botón principal de acción. */
+.btnPrimary {
+  background: linear-gradient(135deg, #a83d5d 0%, #6a1f33 100%);
+}
+
+/* Botón secundario. */
+.btnSecondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f7fafc;
+}
+
+.btnDanger {
+  background: #dc3545;
+}
+
+.btnPrimary:hover,
+.btnSecondary:hover,
+.btnDanger:hover {
+  transform: translateY(-1px);
+}
+
+.paymentCardHeader {
+  align-items: center;
+}
+
+.paymentAmount {
+  text-align: right;
+}
+
+.paymentAmount span {
+  display: block;
+  color: #7d8aa3;
+  font-size: 0.8rem;
+}
+
+.paymentAmount strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.splitInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Resumen de pago. */
+.paymentSummary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.22);
+    border-radius: 16px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.paymentSummary strong {
+    font-size: 1.25rem;
+}
+
+/* Lista de métodos de pago. */
+.paymentMethods {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Botón individual de método de pago. */
+.paymentMethodButton {
+    flex: 1 1 150px;
+    min-width: 140px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.paymentMethodButton:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.selectedMethod {
+    border-color: rgba(191, 75, 111, 0.7);
+    background: rgba(191, 75, 111, 0.18);
+    color: #fff;
+}
+
+.mercadoPagoBox {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.loadingRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.paymentForm {
+    display: grid;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+@media (max-width: 960px) {
+  .profileGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .profileHeader,
+  .paymentCardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .paymentAmount {
+    text-align: left;
+  }
+
+  .splitInputs {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .form label,
+  .paymentForm label {
+    grid-template-columns: 1fr;
+  }
+
+  .form input,
+  .paymentForm input {
+    width: 100%;
+  }
+}
+
+.paymentForm label {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+}
+
+.paymentForm input {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+
+.paymentFormActions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.paymentStatus {
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(40, 167, 69, 0.18);
+    color: #d4edda;
+    border: 1px solid rgba(40, 167, 69, 0.35);
+}
+
+/*.form input:disabled{
+  cursor: not-allowed;
+  background: var(--surface);
+  color: var(--muted);  
+  opacity: 0.6;
+}
+
+.form label:has(input:disabled){
+  cursor: not-allowed;
+  color: #777
+}*/
+
+.btnEditProfile,
+.deleteAccountButton,
+.btnSaveProfile,
+.btnCancelEdit,
+.btnCancel{
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  margin-top: 8px;
+
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.btnSaveProfile:hover {
+    background-color: #218838; 
+}
+
+.btnCancelEdit:hover {
+    background-color: #5a6268;
+}
+
+.btnEditProfile:hover{
+  background-color: rgb(82, 81, 81);
+}
+
+.deleteAccountButton:hover{
+  background-color: rgba(219, 65, 65, 0.74);
+}

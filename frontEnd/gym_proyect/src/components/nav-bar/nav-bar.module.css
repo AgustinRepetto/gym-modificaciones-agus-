@@ -1,0 +1,129 @@
+/* Barra superior de navegación y menú principal. */
+.navBar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 64px;
+    padding: 0 32px;
+    background: #0d0d0d;
+    border-bottom: 2px solid #8b0f1f;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* Estilo para los enlaces de navegación */
+/* Estilo base de enlaces y texto de navegación. */
+.navBar a,p {
+    color: #f5eef1;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    border-radius: 0;
+    background: #141414;
+    border: 1px solid #2a1217;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.navBar a:hover,
+.navBar p:hover {
+    color: #ffffff;
+    background-color: #8b0f1f;
+    border-color: #8b0f1f;
+    transform: translateY(-1px);
+}
+
+/* Bloques secundarios dentro de la barra, como el usuario o acciones. */
+.navBar div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 14px;
+    border-radius: 0;
+    background: #111111;
+    border: 1px solid #241015;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.navBar div:hover {
+    background-color: #1a1a1a;
+    border-color: #d61f3f;
+}
+
+/* Enlace que muestra la foto de perfil del usuario. */
+.profileImageLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 0;
+}
+
+.profileImageLink:hover {
+    background: #1d1d1d;
+}
+
+/* Texto del usuario dentro de la barra. */
+.navBar div p {
+    margin: 0;
+    color: #e5e7eb;
+    font-size: 0.92rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Imagen del usuario en la barra. */
+.userImage {
+    width: 36px;
+    height: 36px;
+    border-radius: 0;
+    background: #d61f3f;
+    border: 2px solid #ffffff;
+    box-shadow: none;
+    margin: 0;
+    object-fit: cover;
+}
+
+/* Layout helpers for left/right alignment */
+/* Grupo izquierdo de la barra de navegación. */
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Grupo derecho de la barra de navegación. */
+.right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+/* Botón de cierre de sesión. */
+.logoutButton {
+    cursor: pointer;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 0;
+    background: #d61f3f;
+    border: 1px solid #d61f3f;
+    box-shadow: none;
+}
+
+.logoutButton:hover {
+    color: #ffffff;
+    background: #6b0b17;
+    transform: translateY(-1px);
+}
+
+.navBar p:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
