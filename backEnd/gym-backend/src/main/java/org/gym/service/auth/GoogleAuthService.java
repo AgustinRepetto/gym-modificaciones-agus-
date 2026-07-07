@@ -95,7 +95,7 @@ public class GoogleAuthService {
             user = jpaUserRepository.save(user);
         }
         String token = jwtService.generateToken(user);
-        return new LoginResponse(token, user.getId(), user.getUsername(), user.getEmail(), user.getAuthProvider());
+        return new LoginResponse(token, user.getId(), user.getUsername(), user.getEmail(), user.getRole().toString());
     }
 
 
